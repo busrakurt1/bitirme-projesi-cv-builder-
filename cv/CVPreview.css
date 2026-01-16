@@ -1,0 +1,278 @@
+/* ===============  
+   GLOBAL CV FONT & RESET
+   =============== */
+.cv-container {
+  font-family: "Calibri", "Arial", sans-serif;
+  color: #000;
+  padding: 40px;
+  line-height: 1.4;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===============  
+      HEADER
+   =============== */
+.cv-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.full-name {
+  font-size: 15pt;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  text-transform: capitalize;
+}
+
+.title-role {
+  font-size: 10pt;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.contact-info, 
+.social-links {
+  font-size: 11pt;
+  margin-bottom: 5px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-item a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* ===============  
+   SECTION TITLES
+   =============== */
+.section-title {
+  font-size: 14pt;
+  font-weight: 555;
+  text-transform: uppercase;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+
+.section-content {
+  margin-top: 10px;
+}
+
+/* ===============  
+   ITEMS (Experience, Project, Education)
+   (AI Hizalama Düzeltmeleri Dahil Edildi)
+   =============== */
+.experience-item,
+.education-item,
+.project-item {
+  margin-bottom: 15px;
+  /* İçeriklerin her zaman sola yaslı ve alt alta olmasını garantiye al */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+/* Başlık ve Tarih Satırı */
+.row-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  text-align: left;
+}
+
+/* Metin Stilleri */
+.job-title, 
+.degree, 
+.project-title {
+  font-size: 11pt;
+  font-weight: 400;
+  color: #000;
+}
+
+/* Tarih Alanı (Sağa Sabitleme) */
+.dates, 
+.education-dates, 
+.project-dates {
+  font-size: 11pt;
+  font-weight: 400;
+  text-align: right;
+  min-width: 120px;
+  margin-left: auto; /* Flex yapısında en sağa iter */
+}
+
+.company-info, 
+.university {
+  font-size: 11pt;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.location {
+  font-size: 11pt;
+  text-align: right;
+}
+
+/* ===============  
+   LISTS & DESCRIPTIONS (BİRLEŞTİRİLMİŞ YAPI)
+   =============== */
+
+/* 1. Liste Kapsayıcı Ayarları */
+.responsibilities, 
+.project-description-list,
+.project-item ul { /* AI'dan gelen ul'leri de kapsar */
+  margin: 5px 0 0 0;
+  padding-left: 0 !important;
+  list-style: none !important;
+  text-align: left;
+  width: 100%;
+}
+
+/* 2. Liste Elemanları (Satır Hizalama) */
+.responsibilities li,
+.project-description-list li,
+.project-item li {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important; /* Sola yasla */
+  text-align: left !important;
+  gap: 0px !important;
+  margin: 4px 0 !important;
+  padding: 0 !important;
+  line-height: 1.35 !important;
+  font-size: 10pt !important;
+  color: #000 !important;
+}
+
+/* 3. Bullet (Nokta) Ayarı */
+.responsibilities li::before,
+.project-description-list li::before,
+.project-item li::before {
+  content: "•" !important;
+  flex: 0 0 12px !important;      /* Sabit genişlik */
+  display: inline-block !important;
+  font-size: 10px !important;
+  line-height: 1.35 !important;
+  margin-top: 3px !important;     /* Hizalama ince ayarı */
+  color: #555 !important;
+}
+
+/* 4. İçerik Metni (Kalan alanı doldur) */
+.responsibilities li > *,
+.project-description-list li > * {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+/* 5. AI Tarafından Gelen Düz Metinler (Paragraf, Div vb.) */
+.project-item > p,
+.project-item > div:not(.row-space-between),
+.project-item > span,
+.summary-text, 
+.description {
+  font-size: 11pt;
+  text-align: justify; /* Okunabilirlik için iki yana yasla */
+  margin-top: 5px;
+  width: 100%;
+}
+
+/* ===============
+   SKILLS & LANGUAGES
+   =============== */
+.skills-grid,
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 4px;
+  margin-top: 5px;
+}
+
+.skill-item,
+.language-item {
+  font-size: 11pt;
+  color: #000;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  display: flex;       
+  align-items: flex-start;
+  margin: 2px 0;
+}
+
+.skill-item::before,
+.language-item::before {
+  content: "•";
+  flex: 0 0 auto;
+  margin-right: 6px;
+  font-size: 10pt;
+  line-height: 1.2;
+  color: #555;
+}
+
+.language-level {
+  font-style: italic;
+  color: #666;
+  margin-left: 4px;
+  font-weight: normal;
+}
+
+/* ===============
+   CERTIFICATES
+   =============== */
+.certificates-section {
+  page-break-before: always; /* Sertifikalar bölümü her zaman yeni sayfada başlasın */
+  break-before: page; /* Modern tarayıcılar için */
+}
+
+.certificate-item {
+  margin-bottom: 10px;
+}
+
+.certificate-issuer {
+  font-size: 11pt;
+  font-style: italic;
+  color: #000;
+  text-align: left;
+}
+
+/* ===============
+   SUMMARY BUTTON & EXTRA
+   =============== */
+.summary-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.summary-change-button {
+  padding: 4px 8px;
+  font-size: 9pt;
+  min-width: 90px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background: #f7f7f7;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.summary-change-button:hover {
+  background: #efefef;
+}
